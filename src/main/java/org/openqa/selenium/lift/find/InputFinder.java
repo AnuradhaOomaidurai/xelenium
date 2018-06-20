@@ -72,4 +72,13 @@ public class InputFinder extends HtmlTagFinder {
   public static HtmlTagFinder submitButton(String label) {
     return submitButton().with(value(label));
   }
+      @Factory
+  public static HtmlTagFinder btnButton() {
+    return new InputFinder().with(attribute("type", equalTo("button")));
+  }
+
+  @Factory
+  public static HtmlTagFinder btnButton(String label) {
+    return btnButton().with(value(label));
+  }
 }
